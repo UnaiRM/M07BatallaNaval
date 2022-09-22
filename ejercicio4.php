@@ -1,17 +1,15 @@
 <table border = 1>
 <?php 
 
-$fragatas = [];
 
 for ($i=0; $i<4;$i++){
     $x = rand(1,12);
     $y = rand(1,12);
-    $fragata = [$x,$y];
+    $fragata = [[$x,$y]];
     $arrayDeArrays[] = $fragata;
     }
 
 
-$submarinos = [];
 
 for ($i=0; $i<3;$i++){
     $submarino = [];
@@ -33,7 +31,6 @@ for ($i=0; $i<3;$i++){
 }
 
 
-$destructores = [];
 
 for ($i=0; $i<2;$i++){
     $destructor = [];
@@ -55,7 +52,6 @@ for ($i=0; $i<2;$i++){
 }
 
 
-$acorazados = [];
 
 for ($i=0; $i<1;$i++){
     $acorazado = [];
@@ -76,9 +72,6 @@ for ($i=0; $i<1;$i++){
     $arrayDeArrays[] = $acorazado;
 }
 
-echo "<pre>";
-var_dump($arrayDeArrays);
-echo "</pre>";
 
 for ($i=0;$i<=12;$i++){
     echo "<tr>";
@@ -88,7 +81,7 @@ for ($i=0;$i<=12;$i++){
             for ($l=0; $l<$cantidad;$l++){
                 
                 $cantidadArray = count($arrayDeArrays[$l]);
-                if ($arrayDeArrays[$k][$l][0] == $i && $arrayDeArrays[$k][$l][1] == $j){
+                if ($arrayDeArrays[$k][$l][0] == $j && $arrayDeArrays[$k][$l][1] == $i && $i != 0){
                     echo "<td>X</td>";
                     $imprimir = 1;
                 }
